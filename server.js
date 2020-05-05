@@ -24,8 +24,8 @@ app.use(express.json());
 app.engine("handlebars", exphbs({defaultLayout:"main"}));
 app.set("view engine" , "handlebars");
 
-var routes = require("./controllers/burgers_controllers.js");
-app.use(routes);
+require("./routes/api_routes.js")(app);
+
 
 app.listen(PORT,function(){
     console.log("BURGER APP IS LISTENING ON PORT " + PORT);
